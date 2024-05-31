@@ -1,16 +1,11 @@
-import { Books } from "../../../../types/books"
-import ListContent from "../ListContent/ListContent"
+import React from 'react'
+import ListItems from '../ListItems/ListItems';
+import { getBooks } from '../../../../services/api';
 
-type Props = {
-  books: Books[]
-}
+export default async function List() {
+  const books = await getBooks();
 
-export default function List({books}: Readonly<Props>) {
   return (
-  <ul>
-    {
-      books.map(({title}) => <ListContent title={title} key={title} />)
-    }
-  </ul>
+    <ListItems books={books}/>
   )
 }

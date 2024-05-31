@@ -1,11 +1,10 @@
-import React from 'react'
+import { Book } from "../../../../types/books"
 
 type Props = {
-  title: string
+  book: Book
 }
-
-export default function ListContent({title}: Readonly<Props>) {
+export default function ListContent({book}: Props) {
   return (
-    <li>{title}</li>
+    <li>{book.title}</li>
   )
 }
